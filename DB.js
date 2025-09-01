@@ -10,7 +10,7 @@ const mongoose = require("mongoose");
 const mongoURL = 'mongodb://127.0.0.1:27017/hotels' ; //For Own copmputer Connection
 
 // Use when connect with Atlas
-// const mongoURL = 'mongodb+srv://abhiman5196:Abhi5196@cluster0.kerjnhf.mongodb.net/'
+// const mongoURL = 'mongodb+srv://@cluster0.kerjnhf.mongodb.net/'
 
 
 // STEP: 02
