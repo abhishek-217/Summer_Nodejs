@@ -1,3 +1,6 @@
+
+// Schema for menu in database
+
 const mongoose = require('mongoose');
 
 const Menuschema = new mongoose.Schema({

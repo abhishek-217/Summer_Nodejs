@@ -24,8 +24,6 @@
 
 // Create Server
 
-const express = require('express')
-const app = express();
 
 
 
@@ -47,16 +45,19 @@ const app = express();
       // })
       
       // app.post('/person', function(req,res){
-//     res.send("Data is Saved ");
-// })
-
-
-
-
-
+        //     res.send("Data is Saved ");
+        // })
+        
+        
+        
+        
+        
+const express = require('express')
+const app = express();
 
 // Connection via mongoose (Import fle DB)
 const db = require('./DB');
+
 
 // Person Model to store their data
 // const person = require('./models/person');
@@ -86,9 +87,9 @@ const menuRoutes = require('./routes/menuRoutes');
 
 // Use the routes
 
-// app.use('/', personRoutes);  Normally this but want to remove person and write only one time here
-app.use('/person', personRoutes);
-app.use('/menu', menuRoutes);
+ app.use('/', personRoutes);  //Normally this but want to remove person and write only one time here
+// app.use('/person', personRoutes);
+// app.use('/menu', menuRoutes);
 
 
 app.listen(3000, ()=>{

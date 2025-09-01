@@ -7,14 +7,18 @@ const mongoose = require("mongoose");
 
 // Definr MongoDB Connection URL
 
-const mongoURL = 'mongodb://127.0.0.1:27017/hotels' 
+const mongoURL = 'mongodb://127.0.0.1:27017/hotels' ; //For Own copmputer Connection
+
+// Use when connect with Atlas
+// const mongoURL = 'mongodb+srv://abhiman5196:Abhi5196@cluster0.kerjnhf.mongodb.net/'
 
 
 // STEP: 02
 // Set MongoDB connection
 
 mongoose.connect(mongoURL, {
-    
+    useNewUrlParser :true,
+    useUnifiedTopology: true
 })
 
 

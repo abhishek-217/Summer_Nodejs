@@ -43,24 +43,26 @@ router.get('/', async (req, res) => {
         console.log("Error saving person", err);
         res.status(500).json({ error: "Server error" })
     }
-})
+}) 
 
 // In company GET use like this for privacy 
-router.get('/:workType', async (req, res) => {
-    try {
-        const workType = req.params.workType;
-        if (workType == 'chef' || workType == 'manager' || workType == 'waiter') {
-            const response = await person.find({ work: workType });
-            console.log('response fetched');
-            res.status(200).json({ response });
-        } else {
-            res.status(404).json({ error: 'Invalid work type' });
-        }
-    } catch (err) {
-        console.log("Error saving person", err);
-        res.status(500).json({ error: "Server error" })
-    }
-})
+
+
+// router.get('/:workType', async (req, res) => {
+//     try {
+//         const workType = req.params.workType;  //"req" use to get param from url
+//         if (workType == 'chef' || workType == 'manager' || workType == 'waiter') {
+//             const response = await person.find({ work: workType });
+//             console.log('response fetched');
+//             res.status(200).json({ response });
+//         } else {
+//             res.status(404).json({ error: 'Invalid work type' });
+//         }
+//     } catch (err) {
+//         console.log("Error saving person", err);
+//         res.status(500).json({ error: "Server error" })
+//     }
+// })
 
 
 router.put('/:id',async(req,res) =>{
