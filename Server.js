@@ -55,6 +55,9 @@
 const express = require('express')
 const app = express();
 
+require('dotenv').config();
+const port = process.env.PORT || 3000;  //Means DB jo port diya uspe nhi too local 3000
+
 // Connection via mongoose (Import fle DB)
 const db = require('./DB');
 
@@ -72,9 +75,9 @@ const bodyparser = require('body-parser');
 // JSON type data we use so call json function
 app.use(bodyparser.json());
 
-// app.get('/', function (req, res) {
-//   res.send('Welcome! to Our first Server Sir ..')
-// })
+app.get('/', async (req, res) => {
+  res.send('Welcome! to Our first Server Sir ..')
+})
 
 
 
@@ -87,11 +90,11 @@ const menuRoutes = require('./routes/menuRoutes');
 
 // Use the routes
 
- app.use('/', personRoutes);  //Normally this but want to remove person and write only one time here
-// app.use('/person', personRoutes);
+//  app.use('/', personRoutes);  //Normally this but want to remove person and write only one time here
+app.use('/person', personRoutes);
 // app.use('/menu', menuRoutes);
 
 
-app.listen(3000, ()=>{
+app.listen(port, ()=>{
   console.log("Server Listening on 3000")
 }) 

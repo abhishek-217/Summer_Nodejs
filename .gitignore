@@ -1,3 +1,4 @@
 # igonore file or directory
 
 node_modules/
+.env

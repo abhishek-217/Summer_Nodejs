@@ -2,15 +2,16 @@
 // With the help of Mongoose
 
 const mongoose = require("mongoose");
+require('dotenv').config();
 
 // STEP:01
 
 // Definr MongoDB Connection URL
 
-const mongoURL = 'mongodb://127.0.0.1:27017/hotels' ; //For Own copmputer Connection
+// const mongoURL = process.env.DB_URL_LOCAL ; //For Own copmputer Connection
 
 // Use when connect with Atlas
-// const mongoURL = 'mongodb+srv://@cluster0.kerjnhf.mongodb.net/'
+const mongoURL = process.env.DB_URL ; //When host to atlas and use
 
 
 // STEP: 02
